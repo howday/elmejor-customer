@@ -37,7 +37,7 @@ public class Customer {
 	private String email;
 
 	@Valid
-	@OneToOne(mappedBy = "customer", fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	@OneToOne(mappedBy = "customer", fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
 	private Address address = new Address();
 
 	/**
