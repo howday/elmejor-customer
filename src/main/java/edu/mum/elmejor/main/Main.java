@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import edu.mum.elmejor.domain.Address;
 import edu.mum.elmejor.domain.Customer;
 import edu.mum.elmejor.service.CustomerService;
 
@@ -44,6 +45,15 @@ public class Main {
 		customer.setFirstName("Mark");
 		customer.setLastName("Henry");
 		customer.setEmail("mark.henry@gmail.com");
+		
+		Address address = new Address();
+		address.setCity("Fairfield");
+		address.setMember(customer);
+		address.setState("Iowa");
+		address.setZipCode("52557");
+		address.setStreet("1000N Street");
+		
+		customer.setAddress(address);
 		customerService.save(customer);
 		logger.info("Customer saved successfully!!");
 
